@@ -16,12 +16,10 @@ const {
 } = process.env
 
 const app = new Tweetur({
-    consumer_key : CONSUMER_KEY, // required **
+    consumer_key: CONSUMER_KEY, // required **
     consumer_secret: CONSUMER_SECRET, // required **
     access_token: ACCESS_TOKEN, // required **
     access_token_secret: ACCESS_TOKEN_SECRET, // required **
-    // sub: "api",
-    // api_version: "1.1"
 }) 
 
 app.authenticate(async function(err, data){
