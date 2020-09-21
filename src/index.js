@@ -34,4 +34,16 @@ const { PORT = 8080 } = process.env
 // create an express server
 const server = express()
 
+// routes 
+server.get('/', async (req,res) => {
+    const data = await app.get('users/show.json', { screen_name: "aelfestijo" })
+    res.json(data)
+})
+
+server.get('/:who', async (req,res) => {
+    const { params: { who } } = req 
+    const data = await app.get('statuses/user_timeline.json', { screen_name: who })
+    res.json(data)
+})
+
 server.listen(PORT, () => console.log(`> Server created at http://localhost:${PORT}`))
