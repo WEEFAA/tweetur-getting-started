@@ -13,8 +13,7 @@ const app = new Tweetur({
 
 app.authenticate(async function(err, data){
     if(err) throw err 
-    // authenticated
-    const target_user = "aelfestijo"
-    const my_data = await app.get('/users/show.json', { screen_name: target_user } )
-    console.log(my_data)
+    // authenticated, make sure that you're keys are correct
+    // and doesn't include whitespaces.
+    console.log("> Tweetur Authenticated")
 })
