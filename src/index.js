@@ -1,4 +1,5 @@
 const Tweetur = require('tweetur')
+const express = require('express')
 
 //initialize the Tweetur object...
 //along with your keys
@@ -17,3 +18,10 @@ app.authenticate(async function(err, data){
     // and doesn't include whitespaces.
     console.log("> Tweetur Authenticated")
 })
+
+// env
+const PORT = 8080
+// create an express server
+const server = express()
+
+server.listen(PORT, () => console.log(`> Server created at http://localhost:${PORT}`))
